@@ -1,7 +1,9 @@
 import net.dv8tion.jda.core.AccountType
 import net.dv8tion.jda.core.JDABuilder
+import net.dv8tion.jda.core.entities.Message
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent
 import net.dv8tion.jda.core.hooks.ListenerAdapter
+import java.io.File
 import javax.security.auth.login.LoginException
 
 class Main: ListenerAdapter(){
@@ -32,6 +34,9 @@ class Main: ListenerAdapter(){
         }
         if (event.message.contentRaw == "!commands") {
             event.channel.sendMessage("-!schedule ").queue()
+        }
+        if (event.message.contentRaw.toLowerCase().contains("frick") || event.message.contentRaw.toLowerCase().contains("heck")) {
+            event.channel.sendFile(File("C:\\Users\\it13\\thingy.jpg")).queue()
         }
     }
 }
