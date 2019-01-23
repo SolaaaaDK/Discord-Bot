@@ -33,10 +33,16 @@ class Main: ListenerAdapter(){
             """.trimMargin()).queue()
         }
         if (event.message.contentRaw == "!commands") {
-            event.channel.sendMessage("-!schedule ").queue()
+            event.channel.sendMessage("""
+               Here is the list of commands:
+               !Schedule
+            """.trimMargin()).queue()
         }
         if (event.message.contentRaw.toLowerCase().contains("frick") || event.message.contentRaw.toLowerCase().contains("heck")) {
             event.channel.sendFile(File("C:\\Users\\it13\\thingy.jpg")).queue()
         }
+        if (event.message.contentRaw.toLowerCase() == "!yt")
+            event.channel.sendMessage("https://www.youtube.com/channel/UC81UFf6xqXebl0f0lRHLoiQ").queue()
+
     }
 }
