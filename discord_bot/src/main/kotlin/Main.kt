@@ -10,8 +10,7 @@ class Main: ListenerAdapter(){
         fun main(args: Array<String>) {
             try {
                 val builder = JDABuilder(AccountType.BOT)
-                val token = "NTM3NTY5NzQ1MDgwMTU2MTcx.DynMLw.ghKVst3qMh-JQUm9GC-96cR8sNE"
-                builder.setToken(token)
+                builder.setToken(BotInfo.Token)
                 builder.addEventListener(Main())
                 builder.buildAsync()
             } catch (e: LoginException) {
